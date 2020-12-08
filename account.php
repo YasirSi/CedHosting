@@ -63,10 +63,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   </a>
 					 </div>
 					 <div class="register-bottom-grid">
-						    <h3>security questions</h3>
+  					     <h3>personal information</h3> 
+ 
 							 <div>
 								<span>questions<label>*</label></span>
 								<input type="password">
+
 							 </div>
 							 <div>
 								<span>answer<label>*</label></span>
