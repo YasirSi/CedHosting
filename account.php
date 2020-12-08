@@ -46,12 +46,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <div class="register-top-grid">
 					<h3>personal information</h3>
 					 <div>
-						<span>First Name<label>*</label></span>
+						<span>Name<label>*</label></span>
 						<input type="text"> 
 					 </div>
 					 <div>
-						<span>Last Name<label>*</label></span>
-						<input type="text"> 
+						  <span>Mobile<label>*</label></span>
+						  <input type="text"> 
 					 </div>
 					 <div>
 						 <span>Email Address<label>*</label></span>
@@ -61,6 +61,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   <a class="news-letter" href="#">
 						 <!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label> -->
 					   </a>
+					 </div>
+					 <div class="register-bottom-grid">
+						    <h3>security questions</h3>
+							 <div>
+								<span>questions<label>*</label></span>
+								<input type="password">
+							 </div>
+							 <div>
+								<span>answer<label>*</label></span>
+								<input type="password">
+							 </div>
 					 </div>
 				     <div class="register-bottom-grid">
 						    <h3>login information</h3>
