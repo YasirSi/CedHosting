@@ -1,10 +1,32 @@
-<!--
-Au<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+    include('dbConnect.php');
+    include('');
+
+    $dbConnect = new dbConnect();
+
+    if(isset($_POST['submit']))
+    {
+        $name = isset($_POST['name']) ? ($_POST['name']) : "";
+		$mobile = isset($_POST['mobile']) ? ($_POST['mobile']) : "";
+		$email = isset($_POST['email']) ? ($_POST['email']) : "";
+        $password = isset($_POST['password']) ? ($_POST['password']) : "";
+        $repassword = isset($_POST['confirmpassword']) ? ($_POST['confirmpassword']) : "";
+        //echo $name, $mobile, $email ,$password, $repassword;
+
+        $user = new user();
+        
+        $sql = $user->signup($username, $name, $mobile, $password, $repassword, $dbConnect->connect);
+        echo $sql;
+    }  
+    elseif(isset($_POST['already']))
+    {
+        header("Location:login.php");
+    }
+    elseif(isset($_POST['home']))
+    {
+        header("Location: index.php");
+    }
+?>
 <!DOCTYPE HTML>
 <html>
 <head>

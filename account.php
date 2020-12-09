@@ -1,10 +1,34 @@
-<!--
-Au<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+include('dbConnect.php');
+// include('');
+
+$dbConnect = new dbConnect();
+
+if(isset($_POST['submit']))
+{
+	$name = isset($_POST['name']) ? ($_POST['name']) : "";
+	$mobile = isset($_POST['mobile']) ? ($_POST['mobile']) : "";
+	$email = isset($_POST['email']) ? ($_POST['email']) : "";
+	$password = isset($_POST['password']) ? ($_POST['password']) : "";
+	$repassword = isset($_POST['confirmpassword']) ? ($_POST['confirmpassword']) : "";
+	//echo $name, $mobile, $email ,$password, $repassword;
+
+	$user = new user();
+	
+	$sql = $user->signup($username, $name, $mobile, $password, $repassword, $dbConnect->connect);
+	echo $sql;
+}  
+elseif(isset($_POST['already']))
+{
+	header("Location:login.php");
+}
+elseif(isset($_POST['home']))
+{
+	header("Location: index.php");
+}
+
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -42,20 +66,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="main-1">
 		<div class="container">
 			<div class="register">
-		  	  <form> 
+		  	  <form method="POST" action=""> 
 				 <div class="register-top-grid">
 					<h3>personal information</h3>
 					 <div>
 						<span>Name<label>*</label></span>
-						<input type="text"> 
+						<input type="text" name="name"> 
 					 </div>
 					 <div>
 						  <span>Mobile<label>*</label></span>
-						  <input type="text"> 
+						  <input type="number" name="mobile"> 
 					 </div>
 					 <div>
 						 <span>Email Address<label>*</label></span>
-						 <input type="text"> 
+						 <input type="text" name="email"> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
@@ -63,11 +87,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   </a>
 					 </div>
 					 <div class="register-bottom-grid">
-  					     <h3>personal information</h3> 
+  					     <h3>security questions</h3> 
  
 							 <div>
 								<span>questions<label>*</label></span>
-								<input type="password">
+								<!-- <input type="password"> -->
 
 							 </div>
 							 <div>
@@ -79,20 +103,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    <h3>login information</h3>
 							 <div>
 								<span>Password<label>*</label></span>
-								<input type="password">
+								<input type="password" name="password">
 							 </div>
 							 <div>
 								<span>Confirm Password<label>*</label></span>
-								<input type="password">
+								<input type="password" name="confirmpassword">
 							 </div>
 					 </div>
-				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
+			
+				    <div class="clearfix"> </div>
+				   <div class="register-but">
+				   
 					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
-				   </form>
+			  </form>
 				</div>
 		   </div>
 		 </div>
@@ -106,3 +130,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 </body>
 </html>
+
+
+
+
+<!-- <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text text_size" for="inputGroupSelect01">PICKUP</label>
+                        </div>
+                        <select name="pickup" class="custom-select nosamelocation" id="current-location">
+                            <option selected disabled>Current-location</option>
+                            <option value="charbagh">Charbagh</option>
+                            <option value="indiranagar">Indira Nagar</option>
+                            <option value="bbd">BBD</option>
+                            <option value="barabanki">Barabanki</option>
+                            <option value="faizabad">Faizabad</option>
+                            <option value="basti">Basti</option>
+                            <option value="gorakhpur">Gorakhpur</option>
+                        </select>
+                    </div> -->
