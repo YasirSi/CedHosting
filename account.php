@@ -1,6 +1,6 @@
 <?php
 include('dbConnect.php');
-// include('');
+include('user.php');
 
 $dbConnect = new dbConnect();
 
@@ -10,29 +10,22 @@ if(isset($_POST['submit']))
 	$mobile = isset($_POST['mobile']) ? ($_POST['mobile']) : "";
 	$email = isset($_POST['email']) ? ($_POST['email']) : "";
 	$password = isset($_POST['password']) ? ($_POST['password']) : "";
-	$repassword = isset($_POST['confirmpassword']) ? ($_POST['confirmpassword']) : "";
+	$confirmpassword = isset($_POST['confirmpassword']) ? ($_POST['confirmpassword']) : "";
 	//echo $name, $mobile, $email ,$password, $repassword;
 
 	$user = new user();
 	
-	$sql = $user->signup($username, $name, $mobile, $password, $repassword, $dbConnect->connect);
+	$sql = $user->signup( $name, $mobile, $email, $password, $confirmpassword, $dbConnect->connect);
 	echo $sql;
 }  
-elseif(isset($_POST['already']))
-{
-	header("Location:login.php");
-}
-elseif(isset($_POST['home']))
-{
-	header("Location: index.php");
-}
+
 
 
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Planet Hosting a Hosting Category Flat Bootstrap Responsive Website Template | Account :: w3layouts</title>
+<title>CedHosting</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,15 +64,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>personal information</h3>
 					 <div>
 						<span>Name<label>*</label></span>
-						<input type="text" name="name"> 
+						<input type="text" name="name" required> 
 					 </div>
 					 <div>
 						  <span>Mobile<label>*</label></span>
-						  <input type="number" name="mobile"> 
+						  <input type="number" name="mobile" required> 
 					 </div>
 					 <div>
 						 <span>Email Address<label>*</label></span>
-						 <input type="text" name="email"> 
+						 <input type="text" name="email" required> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
@@ -91,7 +84,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  
 							 <div>
 								<span>questions<label>*</label></span>
-								<!-- <input type="password"> -->
+								<select name="" id="">
+								<option value="">Select one of the question </option>
+								<option value="">What was your childhood nickname?</option>
+								<option value="">What is the name of your favourite childhood friend?</option>
+								<option value="">What was your favourite place to visit as a child?</option>
+								<option value="">What was your dream job as a child?</option>
+								<option value="">What is your favourite teacher's nickname?</option>
+
+								</select>
 
 							 </div>
 							 <div>
@@ -103,18 +104,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    <h3>login information</h3>
 							 <div>
 								<span>Password<label>*</label></span>
-								<input type="password" name="password">
+								<input type="password" name="password" required>
 							 </div>
 							 <div>
 								<span>Confirm Password<label>*</label></span>
-								<input type="password" name="confirmpassword">
+								<input type="password" name="confirmpassword" required>
 							 </div>
 					 </div>
 			
 				    <div class="clearfix"> </div>
 				   <div class="register-but">
 				   
-					   <input type="submit" value="submit">
+					   <input type="submit" value="submit" name="submit">
 					   <div class="clearfix"> </div>
 			  </form>
 				</div>
