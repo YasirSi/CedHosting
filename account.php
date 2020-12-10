@@ -1,7 +1,7 @@
 <?php 
 
-    require_once('Dbcon.php');
-    require_once('User.php');
+    include('Dbcon.php');
+    include('User.php');
 
     $Dbcon = new Dbcon();
     $User = new User(); 

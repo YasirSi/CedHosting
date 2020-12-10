@@ -1,25 +1,22 @@
 <?php
     
-    require_once('Dbcon.php');
-    require_once('User.php');
+    include('Dbcon.php');
+    include('User.php');
 
 
-    $Dbcon = new Dbcon();
 
     if(isset($_POST['submit']))
     {
-        $name = isset($_POST['name']) ? ($_POST['name']) : "";
-		$mobile = isset($_POST['mobile']) ? ($_POST['mobile']) : "";
 		$email = isset($_POST['email']) ? ($_POST['email']) : "";
-        $password = isset($_POST['password']) ? ($_POST['password']) : "";
-        $repassword = isset($_POST['confirmpassword']) ? ($_POST['confirmpassword']) : "";
-        //echo $name, $mobile, $email ,$password, $repassword;
+		$password = isset($_POST['password']) ? ($_POST['password']) : "";
 
-        $user = new user();
-        
-        $sql = $user->signup($username, $name, $mobile, $password, $repassword, $dbConnect->connect);
+		$Dbcon = new Dbcon();
+		$User = new User();
+
+		
+        $sql = $User->Login($email,$password,$Dbcon->connect);
         echo $sql;
-    }  
+    }
     elseif(isset($_POST['already']))
     {
         header("Location:login.php");
