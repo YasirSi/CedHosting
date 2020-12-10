@@ -1,10 +1,10 @@
 <?php
     
-    require_once('class/Dbcon.php');
-    require_once('class/User.php');
+    require_once('Dbcon.php');
+    require_once('User.php');
 
 
-    $dbConnect = new dbConnect();
+    $Dbcon = new Dbcon();
 
     if(isset($_POST['submit']))
     {
