@@ -1,12 +1,10 @@
 <?php
-    //--------------Making AND Check Connection using PHP OOP--------------- 
-
-    class dbConnect
+    class Dbcon
     {
         public $servername;
         public $username;
         public $password;
-        public $dbname;
+        public $Dbname;
 
         public $connect;
 

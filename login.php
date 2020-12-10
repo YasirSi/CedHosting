@@ -1,6 +1,8 @@
 <?php
-    include('dbConnect.php');
-    include('user.php');
+    
+    require_once('class/Dbcon.php');
+    require_once('class/User.php');
+
 
     $dbConnect = new dbConnect();
 
