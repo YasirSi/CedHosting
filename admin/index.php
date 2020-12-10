@@ -50,15 +50,15 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="examples/dashboard.php">
+              <a class="nav-link active" href="index.php">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/icons.php">
+              <a class="nav-link" href="examples/products.php">
                 <i class="ni ni-planet text-orange"></i>
-                <span class="nav-link-text">Icons</span>
+                <span class="nav-link-text">Products</span>
               </a>
             </li>
             <li class="nav-item">

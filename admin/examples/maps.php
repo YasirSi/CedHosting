@@ -56,15 +56,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="icons.php">
-                <i class="ni ni-planet text-orange"></i>
-                <span class="nav-link-text">Icons</span>
+              <a class="nav-link" href="products.php">
+              <i class="fa fa-product-hunt " ></i>
+                <span class="nav-link-text">Products</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="map.php">
+              <a class="nav-link active" href="orders.php">
                 <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Google</span>
+                <span class="nav-link-text">Orders</span>
               </a>
             </li>
             <li class="nav-item">
