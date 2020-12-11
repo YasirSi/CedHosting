@@ -26,7 +26,7 @@
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
-          <img src="l.png" class="navbar-brand-img" alt="...">
+          <img src="l.png" class="navbar-brand-img" width="110vw" height="510vw" >
         </a>
       </div>
       <div class="navbar-inner">
